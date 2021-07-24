@@ -15,8 +15,8 @@ router.post('/notes', (req, res) => {
   
     notesData.push(newNote);
   
-    fs.writeFileSync("../db/db.json", JSON.stringify(notesDB));
-    res.json(notesDB);
+    fs.writeFileSync("../db/db.json", JSON.stringify(notesData));
+    res.json(notesData);
 });
 
 router.delete("/notes/:id", (req, res) => {
