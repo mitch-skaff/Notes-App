@@ -19,10 +19,10 @@ router.post('/notes', (req, res) => {
     res.json(notesDB);
 });
 
-router.delete("/api/notes/:id", (req, res) => {
+router.delete("/notes/:id", (req, res) => {
     const noteId = req.params.id;
   
-    notesData = notesData.filter(notes => notes.noteId != noteId);
+    notesData = notesData.filter(notes => notes.notesId != id);
   
     fs.writeFileSync("../db/db.json", JSON.stringify(notesData));
     res.json(notesData);
