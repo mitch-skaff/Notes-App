@@ -20,9 +20,9 @@ router.post('/notes', (req, res) => {
 });
 
 router.delete("/notes/:id", (req, res) => {
-    const noteId = req.params.id;
+    const id = req.params.id;
   
-    notesData = notesData.filter(notes => notes.notesId != id);
+    notesData = notesData.filter(notes => notes.id != id);
   
     fs.writeFileSync("../db/db.json", JSON.stringify(notesData));
     res.json(notesData);
